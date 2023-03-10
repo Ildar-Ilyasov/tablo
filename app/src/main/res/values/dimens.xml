@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt_size1">130dp</dimen>
+    <dimen name="txt_size2">140dp</dimen>
+    <dimen name="txt_size3">20dp</dimen>
+    <dimen name="txt_size4">60dp</dimen>
+    <dimen name="txt_size5">50sp</dimen>
+    <dimen name="txt_size6">30dp</dimen>
+    <dimen name="txt_size7">10dp</dimen>
+</resources>
