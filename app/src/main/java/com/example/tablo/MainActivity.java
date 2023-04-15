@@ -10,10 +10,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Integer meteor = 0;
-    private Integer pennant = 0;
-    private TextView meteorTextView;
-    private TextView pennantTextView;
+    private Integer chelsea = 0;
+    private Integer liver = 0;
+    private TextView chelseaTextView;
+    private TextView liverTextView;
     private static final String TAG = "MainActivity";
 
     @Override
@@ -26,35 +26,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        meteorTextView = findViewById(R.id.num_1);
-        pennantTextView = findViewById(R.id.num_2);
+        chelseaTextView = findViewById(R.id.num_1);
+        liverTextView = findViewById(R.id.num_2);
         Toast.makeText(this, "onCreate()", Toast.LENGTH_LONG).show();
     }
 
     public void onClickAddMeteor(View view) {
-        meteor++;
-        meteorTextView.setText(meteor.toString());
+        chelsea++;
+        chelseaTextView.setText(chelsea.toString());
     }
 
     public void onClickAddPennant(View view) {
-        pennant++;
-        pennantTextView.setText(pennant.toString());
+        liver++;
+        liverTextView.setText(liver.toString());
     }
 
     public void onClickButtonDropping(View view) {
-        meteor = 0;
-        pennant = 0;
+        chelsea = 0;
+        liver = 0;
         resetUI();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("meteor", meteor);
-        outState.putInt("pennant", pennant);
+        outState.putInt("meteor", chelsea);
+        outState.putInt("pennant", liver);
 
         TextView counterView = findViewById(R.id.num_1);
-        counterView.setText(meteor.toString());
+        counterView.setText(chelsea.toString());
         Toast.makeText(this, "onSaveInstanceState()", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onSaveInstanceState");
     }
@@ -63,19 +63,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         if (savedInstanceState != null && savedInstanceState.containsKey("meteor")) {
-            meteor = savedInstanceState.getInt("meteor");
+            chelsea = savedInstanceState.getInt("meteor");
         }
         if ((savedInstanceState != null && savedInstanceState.containsKey("pennant"))) {
-            pennant = savedInstanceState.getInt("pennant");
+            liver = savedInstanceState.getInt("pennant");
         }
         TextView counterView = findViewById(R.id.num_1);
-        counterView.setText(meteor.toString());
+        counterView.setText(chelsea.toString());
         Toast.makeText(this, "onRestoreInstanceState()", Toast.LENGTH_LONG).show();
         Log.d(TAG, "onRestoreInstanceState");
     }
     private void resetUI() {
-        meteorTextView.setText(meteor.toString());
-        pennantTextView.setText(pennant.toString());
+        chelseaTextView.setText(chelsea.toString());
+        liverTextView.setText(liver.toString());
         Toast.makeText(this, "resetUI()", Toast.LENGTH_LONG).show();
         Log.d(TAG, "resetUI");
     }
